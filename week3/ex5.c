@@ -11,6 +11,7 @@ int main() {
 	int nRet=0;
 
 	if((fs1 = fopen("image/test.jpg", "rb")) != NULL ) {
+		puts("dddd");
 		unsigned char *pImgFile;
 
 		fstat(fileno(fs1), &filestat );
