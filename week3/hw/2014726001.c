@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 
 	if((fd1 = open(argv[1], O_RDONLY)) > 0) { // 복사할 파일 오픈
 		if(stat(argv[1], &filestat) == -1) // 복사할 파일 정보 filestat에 저장
-			perror("fopen"); // 안되면 오류 출력
+			perror("open"); // 안되면 오류 출력
 		buf = (char*)malloc((int)filestat.st_size); // 저장할 buf 할당
 		memset(buf, 0x00, filestat.st_size); // buf 더미 값 모두 초기화
 		nread = read(fd1, buf, (int)filestat.st_size); // buf에 데이터 저장
